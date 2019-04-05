@@ -18,5 +18,15 @@ RSpec.describe 'When a user visits a vending machine show page', type: :feature 
     expect(page).to have_content("Price: $#{@oreos.price}")
   end
 
+  it 'shows an average price for all snacks in that machine' do
+    average_price = (@cheetos.price + @oreos.price) / 2
 
+    expect(page).to have_content("Average snack price: $#{average_price}")
+  end
 end
+#
+# User Story 2 of 3
+#
+# As a visitor
+# When I visit a vending machine show page
+# I also see an average price for all of the snacks in that machine
